@@ -1,20 +1,26 @@
+// PACKAGE IMPORTS
 // base express app imports
 const express = require('express');
 
 // database imports
+// mysql imported
 const db = require('mysql');
+// sequelize imported
 const sequelize = require('sequelize');
 
 // authentication imports
+// will be using auth0 for user authentication
 const auth0 = require('auth0');
+// jwt and jwksRsa for auth0 tokenization
 const jwt = require('express-jwt');
 const jwksRsa = require('jwks-rsa');
 
+// set our express app to use express router
 const router = express.Router();
 
-// retrieve latest micro-posts
+// get request to get latest events
 router.get('/', async (req, res) => {
-  const collection = await loadMicroPostsCollection(); //LOAD MICROPOSTSCOLLECTION WILL NEED TO BE UPDATED TO OURS
+  const collection = await loadEvents();
   res.send(
     await collection.find({}).toArray()
   );
@@ -35,9 +41,9 @@ const checkJwt = jwt({
   algorithms: ['RS256']
 });
 
-// insert a new micro-post with user details
+// post request to create a new event
 router.post('/', checkJwt, async (req, res) => {
-  const collection = await loadMicroPostsCollection();
+  const collection = await loadEvents();
 
   const token = req.headers.authorization
     .replace('bearer ', '')
@@ -67,7 +73,7 @@ router.post('/', checkJwt, async (req, res) => {
   });
 });
 
-async function loadMicroPostsCollection() {
+async function loadEvents() {
   const client = await MongoClient.connect('mongodb://localhost:27017/');
   return client.db('micro-blog').collection('micro-posts');
 }
