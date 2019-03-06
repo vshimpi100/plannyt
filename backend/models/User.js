@@ -37,7 +37,7 @@ module.exports = function (sequelize, DataTypes) {
         friends = [],
         niches = ['all']
       }
-    }
+    },
   })
 
   return User;
