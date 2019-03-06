@@ -13,6 +13,7 @@ const morgan = require('morgan');
 // FILE IMPORTS
 // importing custom http routes
 const routes = require('./routes');
+var db = require("./models");
 
 // define the Express app
 const app = express();
