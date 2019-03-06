@@ -10,9 +10,21 @@ module.exports = function (sequelize, DataTypes) {
       type: Sequelize.STRING, //will store event image as a link
       allowNull: true
     },
+    link: {
+      type: Sequelize.TEXT, // text link to the event
+      allowNull: true
+    },
+    text: {
+      type: Sequelize.TEXT, //text describing the event
+      allowNull: true
+    },
     poster: {
       type: Sequelize.STRING, //will be the user ID of the poster
       allowNull: false
+    },
+    location:{
+      type: Sequelize.TEXT, //will be saved as a text address
+      allowNull: true
     },
     niche: {
       type: Sequelize.STRING, //will be the niche where it's posted
@@ -24,11 +36,18 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: false,
       defaultValue: 0
     },
-    follows: {
-      type: Sequelize.JSON, //users that are following this event
+    tentative: {
+      type: Sequelize.JSON, //users that are tentatively going to this event
       allowNull: false,
       defaultValue: {
-        followers = []
+        users = []
+      }
+    },
+    attending: {
+      type: Sequelize.JSON, //users that are attending this event
+      allowNull: false,
+      defaultValue: {
+        users = []
       }
     },
     start: {
