@@ -52,7 +52,7 @@ module.exports = function (sequelize, DataTypes) {
     niche: {
       type: Sequelize.STRING, // If Created Event is a Niche Event, this will be the Niche where it's posted. Disabled & N/A unless nicheEvent = true.
       allowNull: false,
-      defaultValue: 'N/A'
+      defaultValue: null
     },
     score: {
       type: Sequelize.INTEGER, //sum of down and up votes  IDEA: This could be used for Niche events only, and the score can be determined as popularity by a combination of "Attending + Tentative".
