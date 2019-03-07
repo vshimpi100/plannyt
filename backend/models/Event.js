@@ -12,7 +12,7 @@ module.exports = function (sequelize, DataTypes) {
     },
     link: {
       type: Sequelize.TEXT, // External Sharing text link to the event
-      allowNull: false // False because we will generate a link associated to the event page.
+      allowNull: true // If external link for tickets.
     },
     title: {
       type: Sequelize.STRING, //Event Title will describing the event
@@ -22,6 +22,11 @@ module.exports = function (sequelize, DataTypes) {
       type: Sequelize.TEXT,
       allowNull: true
     },
+    eventType: {
+      type: Sequelize.STRING,
+      allowNull: false,
+      defaultValue: "Get Together"
+    },
     creator: {
       type: Sequelize.STRING, // User who created the Event by user ID of the Creator
       allowNull: false
@@ -30,7 +35,7 @@ module.exports = function (sequelize, DataTypes) {
       type: Sequelize.STRING, // If Location has a title (SunTrust Park) will be saved as a text title.
       allowNull: true
     },
-    locationAddress: { // If location has or needs a specific address. We will make location or locationAddress required.
+    locationAddress: { 
       type: Sequelize.STRING,
       allowNull: true
     },
