@@ -25,7 +25,7 @@ module.exports = function (sequelize, DataTypes) {
     eventType: {
       type: Sequelize.STRING,
       allowNull: false,
-      defaultValue: "Get Together"
+      defaultValue: null
     },
     creator: {
       type: Sequelize.STRING, // User who created the Event by user ID of the Creator
