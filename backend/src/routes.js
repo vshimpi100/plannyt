@@ -15,6 +15,10 @@ const auth0 = require('auth0');
 const jwt = require('express-jwt');
 const jwksRsa = require('jwks-rsa');
 
+// FILE IMPORTS
+// importing models
+var db = require("./models");
+
 // set our express app to use express router
 const router = express.Router();
 
