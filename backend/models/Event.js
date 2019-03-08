@@ -7,37 +7,60 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: false
     },
     image: {
-      type: Sequelize.STRING, //will store event image as a link
+      type: Sequelize.STRING, // Event Cover Photo - will store event image as a link
       allowNull: true
     },
     link: {
-      type: Sequelize.TEXT, // text link to the event
-      allowNull: true
+      type: Sequelize.TEXT, // External Sharing text link to the event
+      allowNull: true // If external link for tickets.
     },
-    text: {
-      type: Sequelize.TEXT, //text describing the event
-      allowNull: true
-    },
-    poster: {
-      type: Sequelize.STRING, //will be the user ID of the poster
+    title: {
+      type: Sequelize.STRING, //Event Title will describing the event
       allowNull: false
     },
-    location:{
-      type: Sequelize.TEXT, //will be saved as a text address
+    details: {
+      type: Sequelize.TEXT,
       allowNull: true
     },
-    niche: {
-      type: Sequelize.STRING, //will be the niche where it's posted
+    eventType: {
+      type: Sequelize.STRING,
       allowNull: false,
-      defaultValue: 'all'
+      defaultValue: null
+    },
+    creator: {
+      type: Sequelize.STRING, // User who created the Event by user ID of the Creator
+      allowNull: false
+    },
+    location: {
+      type: Sequelize.STRING, // If Location has a title (SunTrust Park) will be saved as a text title.
+      allowNull: true
+    },
+    locationAddress: { 
+      type: Sequelize.STRING,
+      allowNull: true
+    },
+    isPrivate: { 
+      type: Sequelize.BOOLEAN, // This will set if the event is private or not. Only users invited, or anyone can see and join.
+      allowNull: false,
+      defaultValue: false
+    },
+    nicheEvent: { // This by default says any event being created is a Friend Type event. Can select to be a Niche event, then select "What Niche?" after.
+      type: Sequelize.BOOLEAN,
+      allowNull: false,
+      defaultValue: false
+    },
+    niche: {
+      type: Sequelize.STRING, // If Created Event is a Niche Event, this will be the Niche where it's posted. Disabled & N/A unless nicheEvent = true.
+      allowNull: false,
+      defaultValue: null
     },
     score: {
-      type: Sequelize.INTEGER, //sum of down and up votes
+      type: Sequelize.INTEGER, //sum of down and up votes  IDEA: This could be used for Niche events only, and the score can be determined as popularity by a combination of "Attending + Tentative".
       allowNull: false,
       defaultValue: 0
     },
     tentative: {
-      type: Sequelize.JSON, //users that are tentatively going to this event
+      type: Sequelize.JSON, // users that are tentatively going to this event
       allowNull: false,
       defaultValue: {
         users = []
@@ -57,6 +80,10 @@ module.exports = function (sequelize, DataTypes) {
     end: {
       type: Sequelize.STRING, //will save as a UNIX timestamp for start date and start time together
       allowNull: true
+    },
+    createDate: {
+      type: Sequelize.STRING, //will save as a UNIX timestamp for creation date
+      allowNull: false,
     },
     price: {
       type: Sequelize.DECIMAL(12,2),
