@@ -2,23 +2,20 @@
 // base express app imports
 const express = require('express');
 
-// database imports
-// mysql imported
-const db = require('mysql');
-// sequelize imported
-const sequelize = require('sequelize');
-
-// authentication imports
+// AUTHENTICATION IMPORTS
 // will be using auth0 for user authentication
 const auth0 = require('auth0');
 // jwt and jwksRsa for auth0 tokenization
 const jwt = require('express-jwt');
 const jwksRsa = require('jwks-rsa');
 
-// FILE IMPORTS
-// importing models
+// DATABASE IMPORTS
+// importing database models
 var db = require("./models");
 
+//////////////////////////////////////
+
+// EXPRESS ROUTER
 // set our express app to use express router
 const router = express.Router();
 
@@ -26,7 +23,7 @@ const router = express.Router();
 router.get('/', async (req, res) => {
   const collection = await loadEvents();
   res.send(
-    await collection.find({}).toArray()
+    await collection.findAll({}).toArray()
   );
 });
 
