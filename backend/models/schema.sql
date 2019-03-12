@@ -1,2 +1,2 @@
-DROP DATABASE IF EXISTS plannyt_db;
 CREATE DATABASE plannyt_db;
+USE plannyt_db;
