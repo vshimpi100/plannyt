@@ -1,9 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
-import Callback from '@/components/Callback'
-import ShareThoughts from '@/components/ShareThoughts'
-import auth0Client from '../AuthService'
+import Home from '@/components/home'
+import User from '@/components/user'
+import Events from '@/components/events'
+import Niche from '@/components/niche'
+
 
 Vue.use(Router)
 
@@ -11,19 +12,24 @@ export default new Router({
   mode: 'history',
   routes: [
     {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      path: '@/components/home',
+      name: 'home',
+      component: homePage
+    },
+      {
+      path: '@/components/niche',
+      name: 'user',
+      component: userData
     },
     {
-      path: '/callback',
-      name: 'Callback',
-      component: Callback
+      path: '@/components/events',
+      name: 'event',
+      component: event
     },
     {
-      path: '/share-your-thoughts',
-      name: 'ShareThoughts',
-      component: ShareThoughts,
+      path: '@/components/user',
+      name: 'user',
+      component: user,
       beforeEnter: (to, from, next) => {
         if (auth0Client.isAuthenticated()) {
           return next()
@@ -33,3 +39,5 @@ export default new Router({
     }
   ]
 })
+
+
