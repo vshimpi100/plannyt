@@ -20,17 +20,20 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <ul class="nav justify-content-center navbar-light bg-light">
             <li class="nav-item active">
-                <a class="nav-link" href="#"><i class="fas fa-calendar-alt"></i> Plans</a>
-            </li>
-            <li class="nav-item">
-
                 <a class="nav-link" href="#"><i class="fas fa-globe"></i> Events</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fas fa-users"></i> Following</a>
+
+                <a class="nav-link" href="#"><i class="far fa-calendar-alt"></i> Plans</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="far fa-calendar-plus"></i> New Plan</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#"><i class="fas fa-bell"></i> Notifications</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fas fa-users"></i> Following</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -38,9 +41,7 @@
                     [UserName]
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">My Profile</a>
-                    <a class="dropdown-item" href="#">Account Settings</a>
-                    <a class="dropdown-item" href="#">Integrations</a>
+                    <a class="dropdown-item" href="#">Edit Profile</a>
                     <a class="dropdown-item" href="#">Invite Friends</a>
                     <a class="dropdown-item" href="#">Help</a>
                     <div class="dropdown-divider"></div>
@@ -50,37 +51,89 @@
         </ul>
     </nav>
     <!------------- END: NAVBAR------------->
+
+    <hr>
+
+    <!------------- START: MOBILE NAV------------->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <ul class="nav justify-content-center navbar-light bg-light">
+            <li class="nav-item active">
+                <a class="nav-link" href="#"><i class="fas fa-globe"></i></a>
+            </li>
+            <li class="nav-item">
+
+                <a class="nav-link" href="#"><i class="far fa-calendar-alt"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="far fa-calendar-plus"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fas fa-bell"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fas fa-users"></i></a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false"><i class="fas fa-bars"></i>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Edit Profile</a>
+                    <a class="dropdown-item" href="#">Invite Friends</a>
+                    <a class="dropdown-item" href="#">Help</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Logout</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <!------------- END: MOBILE NAV------------->
     <br>
     <!------------- START: PLANS TABS ------------->
     <div class="container">
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <ul class="nav nav-pills nav-fill justify-content-center">
                     <li class="nav-item">
                         <a class="nav-link" href="#">My Plans</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Availability</a>
+                        <a class="nav-link active" href="#">My Schedule</a>
                     </li>
                 </ul>
-            </div>
-            <div class="col-md-4">
-                <div class="dropdown" id="eventsFilter">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        View: Upcoming
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                        <button class="dropdown-item" type="button">Today</button>
-                        <button class="dropdown-item" type="button">Tomorrow</button>
-                        <button class="dropdown-item" type="button">This Weekend</button>
-                        <button class="dropdown-item" type="button">This Month</button>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
     <!------------- END: PLANS TABS ------------->
+
+    <hr>
+
+    <!------------- START: THIS/NEXT WEEK FILTER ------------->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-start">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1" aria-label="Previous" aria-disabled="true"><span
+                                    aria-hidden="true">&laquo;</span> Previous Week</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-md-6">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-end">
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">Next Week <span
+                                    aria-hidden="true">&raquo;</span></a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!------------- END: THIS/NEXT WEEK FILTER ------------->
 
     <hr>
 
@@ -98,13 +151,13 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="container">
-                    <button type="button" class="btn btn-outline-primary btn-block">Monday</button>
-                    <button type="button" class="btn btn-outline-primary btn-block">Tuesday</button>
-                    <button type="button" class="btn btn-outline-primary btn-block">Wednesday</button>
-                    <button type="button" class="btn btn-outline-primary btn-block">Thursday</button>
-                    <button type="button" class="btn btn-outline-primary btn-block">Friday</button>
-                    <button type="button" class="btn btn-outline-primary btn-block">Saturday</button>
-                    <button type="button" class="btn btn-outline-primary btn-block">Sunday</button>
+                    <button type="button" class="btn btn-outline-primary btn-block">Monday (March 11)</button>
+                    <button type="button" class="btn btn-outline-primary btn-block">Tuesday (March 12)</button>
+                    <button type="button" class="btn btn-outline-primary btn-block">Wednesday (March 13)</button>
+                    <button type="button" class="btn btn-outline-primary btn-block">Thursday (March 14)</button>
+                    <button type="button" class="btn btn-outline-primary btn-block">Friday (March 15)</button>
+                    <button type="button" class="btn btn-outline-primary btn-block">Saturday (March 16)</button>
+                    <button type="button" class="btn btn-outline-primary btn-block">Sunday (March 17)</button>
                 </div>
             </div>
         </div>
@@ -141,11 +194,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <button type="button" class="btn btn-success btn-block">Plan</button>
-                        </div>
-                        <div class="col-md-2">
-                            <button type="button" class="btn btn-success"> > </button>
                         </div>
                     </div>
                 </div>
@@ -166,21 +216,18 @@
                                 </div>
                             </div>
                             <div class="row">
-                                    <div class="col-md-12">
-                                        <h5>Atlanta Braves</h5>
-                                    </div>
+                                <div class="col-md-12">
+                                    <h5>Atlanta Braves</h5>
                                 </div>
+                            </div>
                             <div class="row">
                                 <div class="col-md-12">
                                     <h5>[TIME AVAILABLE]</h5>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <button type="button" class="btn btn-success btn-block">Plan</button>
-                        </div>
-                        <div class="col-md-2">
-                            <button type="button" class="btn btn-success"> > </button>
                         </div>
                     </div>
                 </div>
