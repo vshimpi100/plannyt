@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Quicksand:300,400,500,700"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../../../assets/css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <title>My Plans</title>
+</head>
+
+<body>
+    <!------------- START: NAVBAR ------------->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <ul class="nav justify-content-center navbar-light bg-light">
+            <li class="nav-item active">
+                <a class="nav-link" href="#"><i class="fas fa-globe"></i> Events</a>
+            </li>
+            <li class="nav-item">
+
+                <a class="nav-link" href="#"><i class="far fa-calendar-alt"></i> My Plans</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="far fa-calendar-plus"></i> Make Plans</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fas fa-bell"></i> Notifications</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fas fa-users"></i> Following</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false"><i class="far fa-user"></i>
+                    [UserName]
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Edit Profile</a>
+                    <a class="dropdown-item" href="#">Invite Friends</a>
+                    <a class="dropdown-item" href="#">Help</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Logout</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <!------------- END: NAVBAR------------->
+
+    <hr>
+
+    <!------------- START: MOBILE NAV------------->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <ul class="nav justify-content-center navbar-light bg-light">
+            <li class="nav-item active">
+                <a class="nav-link" href="#"><i class="fas fa-globe"></i></a>
+            </li>
+            <li class="nav-item">
+
+                <a class="nav-link" href="#"><i class="far fa-calendar-alt"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="far fa-calendar-plus"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fas fa-bell"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fas fa-users"></i></a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false"><i class="fas fa-bars"></i>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Edit Profile</a>
+                    <a class="dropdown-item" href="#">Invite Friends</a>
+                    <a class="dropdown-item" href="#">Help</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Logout</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <!------------- END: MOBILE NAV------------->
+    <br>
+
+    <hr>
+
+    <!------------- START: FRIEND PROFILE VIEW ------------->
+    <div class="container">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <img alt="Bootstrap Image Preview" src="https://www.layoutit.com/img/sports-q-c-140-140-3.jpg" />
+                </div>
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h5>Patrick Shea</h5>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h6>(888)-888-8888</h6>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h6>PatrickShea@Gmail.com</h6>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <div class="col-md-4">
+                            <i class="fab fa-facebook-square"></i>
+                        </div>
+                        <div class="col-md-4">
+                            <i class="fab fa-twitter-square"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- CAN USE SAME LOGIC FOR AVAILABILITY & PLANS FROM MY AVAILABILITY & PLANS TO DISPLAY-->
+
+    </div>
+    <hr>
+    <!------------- START: PLANS TABS ------------->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="nav nav-pills nav-fill justify-content-center">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">My Plans</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">My Schedule</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!------------- END: PLANS TABS ------------->
+
+    <hr>
+    <!------------- START: THIS/NEXT WEEK FILTER ------------->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <form>
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                </form>
+            </div>
+            <div class="col-md-4">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-end">
+                        <li class="page-item active">
+                            <a class="page-link" href="#" tabindex="-1" aria-label="Previous" aria-disabled="true">Week
+                                <i class="fas fa-calendar-week"></i></a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">Month <i
+                                    class="far fa-calendar-alt"></i></a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!------------- END: THIS/NEXT WEEK FILTER ------------->
+    <hr>
+    <div class="container">
+        <div class="accordion" id="accordionExample">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <button class="btn btn-outline-primary btn-block collapsed" type="button" data-toggle="collapse"
+                        data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                        Wednesday, March 13 (1)
+                    </button>
+                </div>
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                    <div class="card-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <img alt="Bootstrap Image Preview" height=50px width=50px
+                                        src="https://www.layoutit.com/img/sports-q-c-140-140-3.jpg" />
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h6>Nate Yoakum, Cody Dewrell, & 3 Others</h6>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h6>Bowling</h6>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h6>725 Barrett Parkway Kennesaw, GA 30144</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <h6>7:15pm</h6>
+                                </div>
+                                <div class="col-md-2">
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-primary" data-toggle="modal"
+                                        data-target="#cancelPlansModal">
+                                        Cancel <i class="far fa-calendar-minus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingTwo">
+                    <button class="btn btn-outline-primary btn-block collapsed" type="button" data-toggle="collapse"
+                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Friday, March 15 (2)
+                    </button>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                    <div class="card-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <img alt="Bootstrap Image Preview" height=50px width=50px
+                                        src="https://www.layoutit.com/img/sports-q-c-140-140-3.jpg" />
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h6>Nate Yoakum, Cody Dewrell, & 3 Others</h6>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h6>Bowling</h6>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h6>725 Barrett Parkway Kennesaw, GA 30144</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <h6>7:15pm</h6>
+                                </div>
+                                <div class="col-md-2">
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-primary" data-toggle="modal"
+                                        data-target="#cancelPlansModal">
+                                        Cancel <i class="far fa-calendar-minus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <img alt="Bootstrap Image Preview" height=50px width=50px
+                                        src="https://www.layoutit.com/img/sports-q-c-140-140-3.jpg" />
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h6>Nate Yoakum, Cody Dewrell, & 3 Others</h6>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h6>Bowling</h6>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h6>725 Barrett Parkway Kennesaw, GA 30144</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <h6>7:15pm</h6>
+                                </div>
+                                <div class="col-md-2">
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-primary" data-toggle="modal"
+                                        data-target="#cancelPlansModal">
+                                        Cancel <i class="far fa-calendar-minus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <img alt="Bootstrap Image Preview" height=50px width=50px
+                                        src="https://www.layoutit.com/img/sports-q-c-140-140-3.jpg" />
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h6>Nate Yoakum, Cody Dewrell, & 3 Others</h6>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h6>Bowling</h6>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h6>725 Barrett Parkway Kennesaw, GA 30144</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <h6>7:15pm</h6>
+                                </div>
+                                <div class="col-md-2">
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-primary" data-toggle="modal"
+                                        data-target="#cancelPlansModal">
+                                        Cancel <i class="far fa-calendar-minus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingThree">
+                    <button class="btn btn-outline-primary btn-block collapsed" type="button" data-toggle="collapse"
+                        data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Saturday, March 16 (3)
+                    </button>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                    <div class="card-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <img alt="Bootstrap Image Preview" height=50px width=50px
+                                        src="https://www.layoutit.com/img/sports-q-c-140-140-3.jpg" />
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h6>Nate Yoakum, Cody Dewrell, & 3 Others</h6>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h6>Bowling</h6>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h6>725 Barrett Parkway Kennesaw, GA 30144</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <h6>7:15pm</h6>
+                                </div>
+                                <div class="col-md-2">
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-primary" data-toggle="modal"
+                                        data-target="#cancelPlansModal">
+                                        Cancel <i class="far fa-calendar-minus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <img alt="Bootstrap Image Preview" height=50px width=50px
+                                        src="https://www.layoutit.com/img/sports-q-c-140-140-3.jpg" />
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h6>Nate Yoakum, Cody Dewrell, & 3 Others</h6>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h6>Bowling</h6>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h6>725 Barrett Parkway Kennesaw, GA 30144</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <h6>7:15pm</h6>
+                                </div>
+                                <div class="col-md-2">
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-primary" data-toggle="modal"
+                                        data-target="#cancelPlansModal">
+                                        Cancel <i class="far fa-calendar-minus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <img alt="Bootstrap Image Preview" height=50px width=50px
+                                        src="https://www.layoutit.com/img/sports-q-c-140-140-3.jpg" />
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h6>Nate Yoakum, Cody Dewrell, & 3 Others</h6>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h6>Bowling</h6>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h6>725 Barrett Parkway Kennesaw, GA 30144</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <h6>7:15pm</h6>
+                                </div>
+                                <div class="col-md-2">
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-primary" data-toggle="modal"
+                                        data-target="#cancelPlansModal">
+                                        Cancel <i class="far fa-calendar-minus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="cancelPlansModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h6 class="modal-title" id="exampleModalLabel">Cancel Plans?</h6>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <form>
+                            <div class="form-group">
+                                <h6>Are you sure you want to cancel [EVENT NAME] [DATE/TIME] with [FRIEND(s)/NICHE]?
+                                </h6>
+                                <label for="recipient-name" class="col-form-label">Reason:</label>
+                                <input type="text" class="form-control" id="recipient-name">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Keep Plans</button>
+                    <button type="button" class="btn btn-primary">Cancel Plans</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-------------------------------- BOOTSTRAP SCRIPTS -------------------------------->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
