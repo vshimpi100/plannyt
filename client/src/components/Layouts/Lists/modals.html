@@ -358,6 +358,121 @@
     </div>
     <!------------- END: SHARE NICHE EVENT MODAL------------->
 
+
+
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#timeBlock">New Time Block <i
+            class="far fa-calendar-plus"></i></button>
+    <!-- Modal -->
+    <div class="modal fade" id="timeBlock" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">New Time Block</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <form>
+                            <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Title:</label>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                                <label class="btn btn-secondary btn-sm active">
+                                                    <input type="radio" name="options" id="option1" autocomplete="off"
+                                                        checked>
+                                                    Single Event
+                                                </label>
+                                                <label class="btn btn-secondary btn-sm">
+                                                    <input type="radio" name="options" id="option2" autocomplete="off">
+                                                    Recurring
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <label for="message-text" class="col-form-label">Select Day(s):</label>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <button type="button" class="btn btn-primary btn-sm" data-toggle="button"
+                                                name="monBlock" aria-pressed="false" autocomplete="off">
+                                                Mon
+                                            </button>
+                                            <button type="button" class="btn btn-primary btn-sm" data-toggle="button"
+                                                name="tuesBlock" aria-pressed="false" autocomplete="off">
+                                                Tues
+                                            </button>
+                                            <button type="button" class="btn btn-primary btn-sm" data-toggle="button"
+                                                name="wedBlock" aria-pressed="false" autocomplete="off">
+                                                Wed
+                                            </button>
+                                            <button type="button" class="btn btn-primary btn-sm" data-toggle="button"
+                                                name="thursBlock" aria-pressed="false" autocomplete="off">
+                                                Thurs
+                                            </button>
+                                            <button type="button" class="btn btn-primary btn-sm" data-toggle="button"
+                                                name="friBlock" aria-pressed="false" autocomplete="off">
+                                                Fri
+                                            </button>
+                                            <button type="button" class="btn btn-primary btn-sm" data-toggle="button"
+                                                name="satBlock" aria-pressed="false" autocomplete="off">
+                                                Sat
+                                            </button>
+                                            <button type="button" class="btn btn-primary btn-sm" data-toggle="button"
+                                                name="sunBlock" aria-pressed="false" autocomplete="off">
+                                                Sun
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <label for="recipient-name" class="col-form-label">Timeframe:</label>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="dropdown">
+                                                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button"
+                                                    id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false">
+                                                    Start Time
+                                                </button>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                    <a class="dropdown-item" href="#">00:00</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="dropdown">
+                                                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button"
+                                                    id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false">
+                                                    End Time
+                                                </button>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                    <a class="dropdown-item" href="#">00:00</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <label for="recipient-name" class="col-form-label">Title:</label>
+                                <input type="text" class="form-control" id="recipient-name">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary">Save Block</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-------------------------------- BOOTSTRAP SCRIPTS -------------------------------->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
