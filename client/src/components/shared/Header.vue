@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light text-center">
     <ul class="nav justify-content-center navbar-light bg-light">
       <router-link to="/events" activeClass="active" tag="li" class="nav-item">
         <a class="nav-link">
@@ -16,11 +16,11 @@
           <i class="far fa-calendar-plus"></i> New Plan
         </a>
       </router-link>
-      <router-link to="/friends" activeClass="active" tag="li" class="nav-item">
+      <!-- <router-link to="/friends" activeClass="active" tag="li" class="nav-item">
         <a class="nav-link">
           <i class="fas fa-bell"></i> Notifications
         </a>
-      </router-link>
+      </router-link> -->
       <router-link to="/friends" activeClass="active" tag="li" class="nav-item">
         <a class="nav-link">
           <i class="fas fa-users"></i> Following
