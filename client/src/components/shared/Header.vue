@@ -1,17 +1,17 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light bg-light text-center">
     <ul class="nav justify-content-center navbar-light bg-light">
-      <router-link to="/events" activeClass="active" tag="li" class="nav-item">
+      <router-link to="/" activeClass="active" tag="li" class="nav-item">
         <a class="nav-link">
           <i class="fas fa-globe"></i> Events
         </a>
       </router-link>
-      <router-link to="/friends" activeClass="active" tag="li" class="nav-item">
+      <router-link to="/plans" activeClass="active" tag="li" class="nav-item">
         <a class="nav-link">
           <i class="far fa-calendar-alt"></i> Plans
         </a>
       </router-link>
-      <router-link to="/friends" activeClass="active" tag="li" class="nav-item">
+      <router-link to="/new" activeClass="active" tag="li" class="nav-item">
         <a class="nav-link">
           <i class="far fa-calendar-plus"></i> New Plan
         </a>
@@ -21,7 +21,7 @@
           <i class="fas fa-bell"></i> Notifications
         </a>
       </router-link> -->
-      <router-link to="/friends" activeClass="active" tag="li" class="nav-item">
+      <router-link to="/following" activeClass="active" tag="li" class="nav-item">
         <a class="nav-link">
           <i class="fas fa-users"></i> Following
         </a>
@@ -52,7 +52,7 @@
           </a>
           <ul class="dropdown-menu">
             <!-- FIX USERNAME HERE -->
-            <router-link to="'/profile'+{username}" tag="li">
+            <router-link to="/profile" tag="li">
               <a class="nav-link">
                 <i class="far fa-user"></i> Profile
               </a>
