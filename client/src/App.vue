@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid">
+  <div>
     <!-- header will be on every page -->
     <app-header></app-header>
     <!-- will import our router view based on current route from route.js -->

@@ -1,6 +1,6 @@
 <template>
-  <nav class="navbar navbar-light bg-light justify-content-center">
-    <ul class="nav  navbar-light bg-light">
+  <nav class="navbar navbar-light bg-light">
+    <ul class="nav navbar-light bg-light container-fluid text-center justify-content-center">
       <router-link to="/" activeClass="active" tag="li" class="nav-item col">
         <a class="nav-link">
           <i class="fas fa-globe"></i> Events
