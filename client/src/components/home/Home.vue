@@ -62,7 +62,7 @@
               </ul>
             </nav>
           </div>
-          <app-cal-select v-model="curr"></app-cal-select>
+          <app-cal-select></app-cal-select>
         </div>
       </div>
     </div>
