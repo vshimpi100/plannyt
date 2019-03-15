@@ -4,6 +4,9 @@
 
 <script>
 import moment from "moment";
+import $ from "jquery";
+import "fullcalendar";
+
 export default {
   name: "hello",
   data() {

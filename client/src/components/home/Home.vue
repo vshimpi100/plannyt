@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="row">
+    <!-- <div class="row">
       <div class="col-md-12">
         <ul class="nav nav-pills nav-fill justify-content-center">
           <li class="nav-item">
@@ -14,7 +14,7 @@
           </li>
         </ul>
       </div>
-    </div>
+    </div> -->
     <br>
     <div class="container">
       <div class="row">
@@ -27,7 +27,7 @@
         <div v-else-if="!events[0]" class="col-sm-12 text-center">
           <h3>Awkward, there aren't any events coming up!</h3>
         </div>
-        <div v-else class="col-12 row">
+        <!-- <div v-else class="col-12 row">
           <div class="col-md-8">
             <form>
               <input
@@ -62,9 +62,9 @@
               </ul>
             </nav>
           </div>
-          <app-calendar></app-calendar>
-        </div>
-      </div>
+        </div>-->
+        <app-calendar v-else></app-calendar>
+      </div>x
     </div>
     <Profile></Profile>
     <br>
@@ -73,26 +73,20 @@
 </template>
 
 <script>
-import Calendar from './Calendar.vue'
+import Calendar from "./Calendar.vue";
 
 export default {
-  data () {
+  data() {
     return {
       auth: true,
-      friends: ['john'],
-      events: ['event'],
-      curr: new Date(),
-    }
+      friends: ["ralph"],
+      events: ["1"],
+    };
   },
   components: {
     appCalendar: Calendar
-  },
-  computed: {
-    formattedDate() {
-      return dateFns.format(this.curr, 'MM/DD/YYYY');
-    }
-  },
-}
+  }
+};
 </script>
 
 <style>
