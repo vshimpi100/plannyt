@@ -2,7 +2,7 @@
 import Home from '../components/home/Home.vue'
 import Plans from '../components/plans/Plans.vue'
 import New from '../components/plans/NewPlan.vue'
-import Following from '../components/friends/Following.vue'
+import Friends from '../components/friends/Friends.vue'
 import Login from '../components/user/Login.vue'
 import Profile from '../components/user/Profile.vue'
 
@@ -25,8 +25,8 @@ export const routes = [
   },
   // Friends you are following page
   {
-    path: '/following',
-    component: Following
+    path: '/friends',
+    component: Friends
   },
   // Login page
   {
