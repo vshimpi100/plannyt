@@ -62,15 +62,18 @@
               </ul>
             </nav>
           </div>
-          <app-cal-select></app-cal-select>
+          <app-calendar></app-calendar>
         </div>
       </div>
     </div>
+    <Profile></Profile>
+    <br>
+    <Profile></Profile>
   </div>
 </template>
 
 <script>
-import CalSelect from './CalSelect.vue'
+import Calendar from './Calendar.vue'
 
 export default {
   data () {
@@ -82,7 +85,7 @@ export default {
     }
   },
   components: {
-    appCalSelect: CalSelect
+    appCalendar: Calendar
   },
   computed: {
     formattedDate() {

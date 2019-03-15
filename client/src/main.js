@@ -4,7 +4,10 @@ import VueRouter from 'vue-router'
 import App from './App.vue'
 import { routes } from './router/routes'
 import store from './store/store'
+import FullCalendar from 'vue-full-calendar'
+import 'fullcalendar/dist/fullcalendar.min.css'
 
+Vue.use(FullCalendar)
 Vue.use(VueRouter)
 
 const router = new VueRouter({
