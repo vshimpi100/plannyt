@@ -29,10 +29,14 @@
         </div>
       </div>
     </div>
+    <Profile></Profile>
+    <br>
+    <Profile></Profile>
   </div>
 </template>
 
 <script>
+import Profile from '../profile/Profile.vue'
 export default {
   data () {
     return {
@@ -40,6 +44,9 @@ export default {
       friends: ['john'],
       events: []
     }
+  },
+  components: {
+    Profile
   }
 }
 </script>
