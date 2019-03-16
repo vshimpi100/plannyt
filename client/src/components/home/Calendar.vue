@@ -5,30 +5,27 @@
 <script>
 import moment from "moment";
 export default {
-
   props: [
     'username'
   ],
   data() {
     return {
-      eventSources: [
+      events: [
         {
-          events: function(start, end, timezone, callback) {
-            // ...
-          },
-          color: "red", // an option!
-          textColor: "black",
-          id: "" // an option!
+          title: "test",
+          allDay: true,
+          start: moment(),
+          end: moment().add(1, "d")
         },
         {
-          googleCalendarId: "abcd1234@group.calendar.google.com",
-          color: "yellow", // an option!
-          textColor: "black",
-          id: ""
+          title: "another test",
+          start: moment().add(2, "d"),
+          end: moment()
+            .add(2, "d")
+            .add(2, "h")
         }
       ],
       config: {
-        selectedTimes: [],
         themeSystem: "bootstrap4",
         bootstrapFontAwesome: {
           close: "fa-times",
@@ -43,12 +40,12 @@ export default {
         unselectCancel: ".create-event",
         selectOverlap: true,
         selectConstraint: {
-          dow: [0, 1, 2, 3, 4, 5, 6],
+          dow: [1, 2, 3, 4, 5, 6, 7],
           start: "00:00",
           end: "24:00"
         },
         header: {
-          left: "prev,next, today, addEventButton",
+          left: "prev,next, today",
           center: "title",
           right: "agendaDay,agendaWeek,month"
         },
@@ -61,19 +58,11 @@ export default {
         eventRender: function(event, element) {
           console.log(event);
         },
-        select: function(startDate, endDate, title) {
-          confirm('Do you want to make plans for ' + startDate.format() + ' and ' + endDate.format() + '?');
-          var eventTitle = prompt('Please enter the title of your event.');
-          if (eventTitle.length > 3) {
-            $("#calendar").fullCalendar("renderEvent", {
-              title: eventTitle,
-              start: startDate.format(),
-              end: endDate.format()
-            });
-            alert("All done! Your invite has been sent!");
-          } else {
-            alert("You did not title your event. Please enter a new title.");
-          }
+        dayClick: function(date) {
+          alert("clicked " + date.format());
+        },
+        select: function(startDate, endDate) {
+          alert("selected " + startDate.format() + " to " + endDate.format());
         }
       }
     };
@@ -82,23 +71,5 @@ export default {
 </script>
 
 <style>
-body {
-  font-size: 14px;
-  font-family: "Quicksand", "Open Sans", sans-serif;
-  line-height: 1.4;
-  color: #4d5055;
-  word-wrap: break-word;
-  word-break: break-word;
-  display: block;
-}
 
-div {
-  display: block;
-}
-
-*,
-::after,
-::before {
-  box-sizing: border-box;
-}
 </style>
