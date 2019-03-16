@@ -2,13 +2,7 @@
 // base express app imports
 const express = require('express');
 
-
-// AUTHENTICATION IMPORTS
-// will be using auth0 for user authentication
-const auth0 = require('auth0');
-// jwt and jwksRsa for auth0 tokenization
-const jwt = require('express-jwt');
-const jwksRsa = require('jwks-rsa');
+// authentication to be handled on front end only
 
 // DATABASE IMPORTS
 // importing database models
@@ -19,25 +13,6 @@ var db = require("./models");
 // EXPRESS ROUTER
 // set our express app to use express router
 const router = express.Router();
-
-//////////////////////////////////////
-// MIDDLEWARE
-//////////////////////////////////////
-
-// this is a middleware to validate access_tokens
-const checkJwt = jwt({
-  secret: jwksRsa.expressJwtSecret({
-    cache: true,
-    rateLimit: true,
-    jwksRequestsPerMinute: 5,
-    jwksUri: `https://bk-tmp.auth0.com/.well-known/jwks.json`
-  }),
-
-  // Validate the audience and the issuer.
-  audience: 'https://micro-blog-app',
-  issuer: `https://bk-tmp.auth0.com/`,
-  algorithms: ['RS256']
-});
 
 //////////////////////////////////////
 // USER ROUTES
@@ -97,121 +72,58 @@ router.delete('/u/username', async (req, res) => {
 //////////////////////////////////////
 
 // get request to get events for a user
-router.get('/e/:username', checkJwt, async (req, res) => {
-
-  // check authentication
-  const token = req.headers.authorization
-    .replace('bearer ', '')
-    .replace('Bearer ', '');
-
-  const authClient = new auth0.AuthenticationClient({
-    domain: 'bk-tmp.auth0.com',
-    clientId: 'ZComiPhZoVB02xOsBF81LVbpsvkjL93S',
-  });
-
-  authClient.getProfile(token, async (err, userInfo) => {
-    if (err) {
-      return res.status(500).send(err);
+router.get('/e/:id', async (req, res) => {
+  db.Event.findAll({
+    where: {
+      user: req.params.id
     }
-
-    db.Event.findAll({
-      where: {
-        user: req.params.username
-      }
-    }).then(async result => {
-      // will return an array with one user in it
-      await res.json(results[0]);
-    });
+  }).then(async result => {
+    // will return an array with one user in it
+    await res.json(results[0]);
   });
-
   res.status(200).send();
 });
 
 // post request to create a new event
-router.post('/e', checkJwt, async (req, res) => {
-
-  // check authentication
-  const token = req.headers.authorization
-    .replace('bearer ', '')
-    .replace('Bearer ', '');
-
-  const authClient = new auth0.AuthenticationClient({
-    domain: 'bk-tmp.auth0.com',
-    clientId: 'ZComiPhZoVB02xOsBF81LVbpsvkjL93S',
-  });
-
-  authClient.getProfile(token, async (err, userInfo) => {
-    if (err) {
-      return res.status(500).send(err);
-    }
-
-    // post request
-    db.Event.create(req.body).then(async results => {
-      await res.json(results);
-    })
-
-    res.status(200).send();
-  });
+router.post('/e', async (req, res) => {
+  // post request
+  db.Event.create(req.body).then(async results => {
+    await res.json(results);
+  })
+  res.status(200).send();
 });
 
 // put request to update an event
-router.put('/e/:id', checkJwt, async (req, res) => {
+router.put('/e/:id', async (req, res) => {
 
-  // check authentication
-  const token = req.headers.authorization
-    .replace('bearer ', '')
-    .replace('Bearer ', '');
+  // put request
+  db.Event.findAll({
+    where: 'id' = id
+  }).update(req.body).then(async results => {
+    await res.json(results);
+  })
 
-  const authClient = new auth0.AuthenticationClient({
-    domain: 'bk-tmp.auth0.com',
-    clientId: 'ZComiPhZoVB02xOsBF81LVbpsvkjL93S',
-  });
-
-  authClient.getProfile(token, async (err, userInfo) => {
-    if (err) {
-      return res.status(500).send(err);
-    }
-
-    // put request
-    db.Event.findAll({
-      where: 'id' = id
-    }).update(req.body).then(async results => {
-      await res.json(results);
-    })
-
-    res.status(200).send();
-  });
+  res.status(200).send();
 });
 
 // delete request to delete an event
-router.delete('/e/:id', checkJwt, async (req, res) => {
+router.delete('/e/:id', async (req, res) => {
 
-  // check authentication
-  const token = req.headers.authorization
-    .replace('bearer ', '')
-    .replace('Bearer ', '');
+  // delete request
+  db.Event.destroy({
+    where: 'id' = id
+  }).then(async results => {
+    await res.json(results);
+  })
 
-  const authClient = new auth0.AuthenticationClient({
-    domain: 'bk-tmp.auth0.com',
-    clientId: 'ZComiPhZoVB02xOsBF81LVbpsvkjL93S',
-  });
+  res.status(200).send();
+});
 
-  authClient.getProfile(token, async (err, userInfo) => {
-    if (err) {
-      return res.status(500).send(err);
-    }
-
-    // add something to check if person making delete request is the owner of the event
-
-    // post request
-    db.Event.destroy({
-      where: 'id' = id
-    }).then(async results => {
-      await res.json(results);
-    })
-
-    res.status(200).send();
-  });
+//////////////////////////////////////
+// CATCH-ALL ROUTE
+//////////////////////////////////////
+router.get('*', async (req, res) => {
+  res.status(404).send();
 });
 
 module.exports = router;
