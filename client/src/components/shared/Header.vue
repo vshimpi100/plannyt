@@ -1,10 +1,12 @@
 <template>
-  <nav class="navbar navbar-light nav-pills bg-light justify-content-center text-center">
+  <nav class="navbar navbar-light nav-pills">
     <router-link tag="span" to="/" class="navbar-brand w-100">
-      <a>Plannyt</a>
+      <a class="navbar-brand" href="#">
+    <img src="../../assets/images/greenyellow.png" width="10%" height="10%" alt="">
+  </a>
     </router-link>
     <hr>
-    <ul class="nav navbar-light bg-light container-fluid text-center justify-content-center">
+    <ul class="nav navbar-light container-fluid text-center justify-content-center">
       <router-link to="/" activeClass="active" tag="li" class="nav-item col">
         <a class="nav-link">
           <i class="far fa-calendar"></i> Calendar
@@ -62,5 +64,17 @@ export default {
   font-weight: bold;
   color: blue;
   display: block;
+}
+
+.nav-link {
+  color: #B2F7EF;
+}
+
+.nav-item :hover {
+  color: #EFF7F6;
+}
+
+nav {
+  background-color: #56666B;
 }
 </style>
