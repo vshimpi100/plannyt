@@ -1,42 +1,28 @@
 module.exports = function (sequelize, DataTypes) {
   let User = sequelize.define('User', {
-    id: {
-      type: Sequelize.UUID,
-      primaryKey: true,
-      defaultValue: Sequelize.UUIDV1,
+    name: {
+      type: DataTypes.STRING,
       allowNull: false
     },
     image: {
-      type: Sequelize.STRING, //will store user image as a link
+      type: DataTypes.STRING, //will store user image as a link
       allowNull: true
     },
     email: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
       allowNull: false
     },
-    phone: {
-      type: Sequelize.INTEGER, //because we are storing phone number as an integer we will need to remove the "-"
-      allowNull: true
-    },
-    social: {
-      type: Sequelize.JSON, // will contain igLink, fbLink, twLink, pinLink
+    friends: {
+      type: DataTypes.JSON,
       allowNull: false,
       defaultValue: {
-        igLink = '',
-        fbLink = '',
-        twLink = '',
-        pinLink = ''
+        list: []
       }
     },
-    interactions: {
-      type: Sequelize.JSON, //will contain posts, events, friends, and niches as arrays
+    username: {
+      type: DataTypes.STRING,
       allowNull: false,
-      defaultValue: {
-        posts = [],
-        events = [],
-        friends = [],
-        niches = ['all']
-      }
+      primaryKey: true
     }
   })
 

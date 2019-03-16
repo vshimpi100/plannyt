@@ -3,7 +3,9 @@
     <!-- header will be on every page -->
     <app-header></app-header>
     <!-- will import our router view based on current route from route.js -->
-    <router-view></router-view>
+    <div class="full">
+      <router-view></router-view>
+    </div>
     <!-- footer will be on every page-->
     <app-footer></app-footer>
   </div>
@@ -11,18 +13,18 @@
 
 <script>
 // import components
-import Header from './components/shared/Header.vue'
-import Footer from './components/shared/Footer.vue'
+import Header from "./components/shared/Header.vue";
+import Footer from "./components/shared/Footer.vue";
 
 export default {
   components: {
     appHeader: Header,
     appFooter: Footer
+  },
+  async created() {
+      await this.$auth.renewTokens();
   }
-  // created() {
-  //   this.$store.dispatch("initStocks");
-  // }
-}
+};
 </script>
 
 <style>
@@ -47,5 +49,7 @@ div {
 ::after,
 ::before {
   box-sizing: border-box;
+.full {
+  min-height: 100vh;
 }
 </style>

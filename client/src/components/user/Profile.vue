@@ -1,10 +1,14 @@
 <template>
   <div class="text-center container">
     <app-calendar username="username" events="events"></app-calendar>
+    <br>
+    <app-calendar username="username"></app-calendar>
+
   </div>
 </template>
 
 <script>
+
 import Calendar from "../home/Calendar.vue";
 export default {
   data() {
@@ -17,6 +21,14 @@ export default {
     axios.get("http://localhost:8081/e/" + this.username).then(result => {
       this.events = result.events;
     });
+
+import Calendar from '../home/Calendar.vue'
+export default {
+  data () {
+    return {
+      username: "username"
+    }
+
   },
   components: {
     appCalendar: Calendar

@@ -3,6 +3,7 @@ import Home from '../components/home/Home.vue'
 import Friends from '../components/friends/Friends.vue'
 import Login from '../components/user/Login.vue'
 import Profile from '../components/user/Profile.vue'
+import Callback from '../components/shared/Callback.vue'
 
 // setting router with main views
 export const routes = [
@@ -24,11 +25,16 @@ export const routes = [
   {
     path: '/profile/:username',
     name: 'profile',
-    component: Profile
+    component: Profile,
+    props: true
   },
-  // Catch-all path, will redirect to home page
   {
-    path: '*',
-    redirect: '/'
+    path: '/callback',
+    component: Callback
   }
+  // Catch-all path, will redirect to home page
+  // {
+  //   path: '*',
+  //   redirect: '/'
+  // }
 ]
