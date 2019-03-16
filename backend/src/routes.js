@@ -6,7 +6,7 @@ const express = require('express');
 
 // DATABASE IMPORTS
 // importing database models
-var db = require("./models");
+var db = require("../models");
 
 //////////////////////////////////////
 
@@ -42,7 +42,7 @@ router.post('/u', async (req, res) => {
 router.put('/u/:username', async (req, res) => {
   db.User.findAll({
     where: {
-      username = req.params.username
+      username : req.params.username
     }
   }).update(req.body).then(async results => {
     await res.json(results);
@@ -51,7 +51,7 @@ router.put('/u/:username', async (req, res) => {
 })
 
 // put request to edit a user
-router.delete('/u/username', async (req, res) => {
+router.delete('/u/:username', async (req, res) => {
   db.User.findAll({
     where: {
       username: req.params.username
@@ -61,7 +61,7 @@ router.delete('/u/username', async (req, res) => {
   })
   res.status(200).send();
   db.Event.destroy({
-    where: 'id' = id
+    where: {id : 'id'}
   }).then(async results => {
     await res.json(results);
   })
@@ -98,7 +98,7 @@ router.put('/e/:id', async (req, res) => {
 
   // put request
   db.Event.findAll({
-    where: 'id' = id
+    where: {id : 'id'}
   }).update(req.body).then(async results => {
     await res.json(results);
   })
@@ -111,7 +111,7 @@ router.delete('/e/:id', async (req, res) => {
 
   // delete request
   db.Event.destroy({
-    where: 'id' = id
+    where: {id : 'id'}
   }).then(async results => {
     await res.json(results);
   })
