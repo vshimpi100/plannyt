@@ -14,7 +14,7 @@
           </li>
         </ul>
       </div>
-    </div> -->
+    </div>-->
     <br>
     <div class="container">
       <div class="row">
@@ -80,7 +80,7 @@ export default {
     return {
       auth: true,
       friends: ["ralph"],
-      events: ["1"],
+      events: ["1"]
     };
   },
   components: {
@@ -90,4 +90,23 @@ export default {
 </script>
 
 <style>
+body {
+  font-size: 14px;
+  font-family: "Quicksand", "Open Sans", sans-serif;
+  line-height: 1.4;
+  color: #4d5055;
+  word-wrap: break-word;
+  word-break: break-word;
+  display: block;
+}
+
+div {
+  display: block;
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
 </style>
