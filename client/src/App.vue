@@ -28,6 +28,27 @@ export default {
 </script>
 
 <style>
+body {
+  font-size: 14px;
+  font-family: "Quicksand", "Open Sans", sans-serif;
+  line-height: 1.4;
+  color: #4d5055;
+  word-wrap: break-word;
+  word-break: break-word;
+  display: block;
+}
+nav {
+  background-color: #56666B;
+}
+
+div {
+  display: block;
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
 .full {
   min-height: 100vh;
 }

@@ -10,6 +10,7 @@ export default {
 </script>
 
 <style>
+
 .footer {
     width: 100%;
     /* position: fixed;
