@@ -1,10 +1,9 @@
 // importing main view component files
 import Home from '../components/home/Home.vue'
-import Plans from '../components/plans/Plans.vue'
-import New from '../components/plans/NewPlan.vue'
-import Following from '../components/friends/Following.vue'
+import Friends from '../components/friends/Friends.vue'
 import Login from '../components/user/Login.vue'
 import Profile from '../components/user/Profile.vue'
+import Callback from '../components/shared/Callback.vue'
 
 // setting router with main views
 export const routes = [
@@ -13,34 +12,29 @@ export const routes = [
     path: '/',
     component: Home
   },
-  // User personal plans page
-  {
-    path: '/plans',
-    component: Plans
-  },
-  // New event form
-  {
-    path: '/new',
-    component: New
-  },
   // Friends you are following page
   {
-    path: '/following',
-    component: Following
+    path: '/friends',
+    component: Friends
   },
   // Login page
   {
     path: '/login',
     component: Login
   },
-  // Profile page
   {
-    path: '/profile',
-    component: Profile
+    path: '/profile/:username',
+    name: 'profile',
+    component: Profile,
+    props: true
   },
-  // Catch-all path, will redirect to home page
   {
-    path: '*',
-    redirect: '/'
+    path: '/callback',
+    component: Callback
   }
+  // Catch-all path, will redirect to home page
+  // {
+  //   path: '*',
+  //   redirect: '/'
+  // }
 ]

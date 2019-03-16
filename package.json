@@ -1,0 +1,24 @@
+{
+  "name": "plannyt",
+  "version": "1.0.0",
+  "description": "Application repo accompanying the first article of a series. In this series, you will use modern technologies like Vue.js, AWS Lambda, Express, MongoDB, and Auth0 to create a production-ready application that acts like a micro-blog engine. The first part of the series (this one) will focus on the setup of the Vue.js client that users will interact with and on the definition of the Express backend app.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vshimpi100/plannyt.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vshimpi100/plannyt/issues"
+  },
+  "homepage": "https://github.com/vshimpi100/plannyt#readme",
+  "dependencies": {
+    "express-handlebars": "^3.0.2",
+    "passport": "^0.4.0",
+    "passport-google-oauth20": "^2.0.0"
+  }
+}

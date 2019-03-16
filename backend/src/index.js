@@ -31,7 +31,7 @@ app.use(cors());
 app.use(morgan('combined'));
 
 // define our express application with our api routes
-app.use('/api', routes);
+app.use('', routes);
 
 // start the server
 app.listen(8081, () => {
