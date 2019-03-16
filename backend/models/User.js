@@ -1,26 +1,26 @@
 module.exports = function (sequelize, DataTypes) {
   let User = sequelize.define('User', {
     name: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
       allowNull: false
     },
     image: {
-      type: Sequelize.STRING, //will store user image as a link
+      type: DataTypes.STRING, //will store user image as a link
       allowNull: true
     },
     email: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
       allowNull: false
     },
     friends: {
-      type: Sequelize.JSON,
+      type: DataTypes.JSON,
       allowNull: false,
       defaultValue: {
         list: []
       }
     },
     username: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
       primaryKey: true
     }
