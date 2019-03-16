@@ -1,7 +1,6 @@
 // importing main view component files
 import Home from '../components/home/Home.vue'
 import Friends from '../components/friends/Friends.vue'
-import Login from '../components/user/Login.vue'
 import Profile from '../components/user/Profile.vue'
 import Callback from '../components/shared/Callback.vue'
 
@@ -16,11 +15,6 @@ export const routes = [
   {
     path: '/friends',
     component: Friends
-  },
-  // Login page
-  {
-    path: '/login',
-    component: Login
   },
   {
     path: '/profile/:username',
