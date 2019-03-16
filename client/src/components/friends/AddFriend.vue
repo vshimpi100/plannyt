@@ -1,7 +1,13 @@
 <template>
   <div>
     <div class="row addFriend" v-if="addActive">
-      <input placeholder="username" name="friend" type="text" v-model="friend" class="col-xs-12 col-md-5 offset-md-3">
+      <input
+        placeholder="username"
+        name="friend"
+        type="text"
+        v-model="friend"
+        class="col-xs-12 col-md-5 offset-md-3"
+      >
       <button @click="add()" class="btn btn-primary col-xs-12 col-md-1 add">Add</button>
     </div>
     <div class="row addFriend" v-else>
@@ -25,9 +31,9 @@ export default {
     };
   },
   methods: {
-      add(){
-          this.addActive=false;
-      }
+    add() {
+      this.addActive = false;
+    }
   }
 };
 </script>
@@ -37,6 +43,6 @@ export default {
   margin: 10px;
 }
 .add {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 </style>
