@@ -1,11 +1,21 @@
 <template>
-  <div class="text-center">
-    <h1>Your Friend's schedule goes here!</h1>
+  <div class="text-center container">
+    <app-calendar username="username"></app-calendar>
   </div>
 </template>
 
 <script>
-export default {};
+import Calendar from '../home/Calendar.vue'
+export default {
+  data () {
+    return {
+      username: "username"
+    }
+  },
+  components: {
+    appCalendar: Calendar
+  }
+};
 </script>
 
 <style>

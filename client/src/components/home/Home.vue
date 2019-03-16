@@ -63,7 +63,9 @@
             </nav>
           </div>
         </div>-->
-        <app-calendar v-else></app-calendar>
+
+        <!-- username will be passed as a prop to pick which user to get profile from -->
+        <app-calendar v-else username="user"></app-calendar>
       </div>
     </div>
     <Profile></Profile>
@@ -78,6 +80,8 @@ import Calendar from "./Calendar.vue";
 export default {
   data() {
     return {
+      // NEED TO ADD USER VALIDATION HERE, REAL USERNAME
+      user: 'user',
       auth: true,
       friends: ["ralph"],
       events: ["1"],

@@ -5,7 +5,9 @@
 <script>
 import moment from "moment";
 export default {
-  name: "hello",
+  props: [
+    'username'
+  ],
   data() {
     return {
       events: [
@@ -48,7 +50,7 @@ export default {
           right: "agendaDay,agendaWeek,month"
         },
         handleWindowResize: true,
-        defaultView: "agendaDay",
+        defaultView: "agendaWeek",
         allDayText: "All Day Event",
         navLinks: true, // can click day/week names to navigate views
         editable: true,
