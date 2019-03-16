@@ -33,7 +33,9 @@
 export default {
   data() {
     return {
-      auth: false
+      auth: false,
+      profile: {},
+      isAuthenticated: false
     };
   },
   methods: {
@@ -49,11 +51,8 @@ export default {
       this.profile = data.profile;
     }
   },
-  data() {
-    return {
-      isAuthenticated: false,
-      profile: {}
-    };
+  mounted(){
+    console.log(this.profile)
   }
 };
 </script>

@@ -1,10 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
   let User = sequelize.define('User', {
-    username: {
-      type: Sequelize.STRING,
-      primaryKey: true,
-      allowNull: false
-    },
     name: {
       type: Sequelize.STRING,
       allowNull: false
@@ -23,6 +18,11 @@ module.exports = function (sequelize, DataTypes) {
       defaultValue: {
         list: []
       }
+    },
+    username: {
+      type: Sequelize.STRING,
+      allowNull: false,
+      primaryKey: true
     }
   })
 
