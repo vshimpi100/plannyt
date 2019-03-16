@@ -17,6 +17,13 @@ module.exports = function (sequelize, DataTypes) {
       type: Sequelize.STRING,
       allowNull: false
     },
+    friends: {
+      type: Sequelize.JSON,
+      allowNull: false,
+      defaultValue: {
+        list: []
+      }
+    }
   })
 
   return User;

@@ -24,7 +24,8 @@ export const routes = [
   {
     path: '/profile/:username',
     name: 'profile',
-    component: Profile
+    component: Profile,
+    props: true
   },
   // Catch-all path, will redirect to home page
   {
