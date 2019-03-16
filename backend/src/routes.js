@@ -21,15 +21,8 @@ var db = require("./models");
 const router = express.Router();
 
 //////////////////////////////////////
-
-// API ROUTES
-
-// get request to get latest events
-router.get('/api/e/:id', async (req, res) => {
-  db.Event.findAll({}).then(async result => {
-    await res.json(results);
-  });
-});
+// MIDDLEWARE
+//////////////////////////////////////
 
 // this is a middleware to validate access_tokens
 const checkJwt = jwt({
@@ -46,8 +39,96 @@ const checkJwt = jwt({
   algorithms: ['RS256']
 });
 
+//////////////////////////////////////
+// USER ROUTES
+//////////////////////////////////////
+
+// get request to get events for a given user
+router.get('/u/:username', async (req, res) => {
+  db.User.findAll({
+    where: {
+      user: req.params.username
+    }
+  }).then(async result => {
+    // will return an array with one user in it
+    await res.json(results[0]);
+  });
+});
+
+// post request to create a new user
+router.post('/u', async (req, res) => {
+  db.User.create(req.body).then(async results => {
+    await res.json(results);
+  })
+  res.status(200).send();
+})
+
+// put request to edit a user
+router.put('/u/:username', async (req, res) => {
+  db.User.findAll({
+    where: {
+      username = req.params.username
+    }
+  }).update(req.body).then(async results => {
+    await res.json(results);
+  })
+  res.status(200).send();
+})
+
+// put request to edit a user
+router.delete('/u/username', async (req, res) => {
+  db.User.findAll({
+    where: {
+      username: req.params.username
+    }
+  }).destroy(req.body).then(async results => {
+    await res.json(results);
+  })
+  res.status(200).send();
+  db.Event.destroy({
+    where: 'id' = id
+  }).then(async results => {
+    await res.json(results);
+  })
+})
+
+//////////////////////////////////////
+// EVENT ROUTES
+//////////////////////////////////////
+
+// get request to get events for a user
+router.get('/e/:username', checkJwt, async (req, res) => {
+
+  // check authentication
+  const token = req.headers.authorization
+    .replace('bearer ', '')
+    .replace('Bearer ', '');
+
+  const authClient = new auth0.AuthenticationClient({
+    domain: 'bk-tmp.auth0.com',
+    clientId: 'ZComiPhZoVB02xOsBF81LVbpsvkjL93S',
+  });
+
+  authClient.getProfile(token, async (err, userInfo) => {
+    if (err) {
+      return res.status(500).send(err);
+    }
+
+    db.Event.findAll({
+      where: {
+        user: req.params.username
+      }
+    }).then(async result => {
+      // will return an array with one user in it
+      await res.json(results[0]);
+    });
+  });
+
+  res.status(200).send();
+});
+
 // post request to create a new event
-router.post('/api/e', checkJwt, async (req, res) => {
+router.post('/e', checkJwt, async (req, res) => {
 
   // check authentication
   const token = req.headers.authorization
@@ -65,7 +146,7 @@ router.post('/api/e', checkJwt, async (req, res) => {
     }
 
     // post request
-    db.Event.create(req.body).then(async results =>{
+    db.Event.create(req.body).then(async results => {
       await res.json(results);
     })
 
@@ -74,7 +155,7 @@ router.post('/api/e', checkJwt, async (req, res) => {
 });
 
 // put request to update an event
-router.put('/api/e/:id', checkJwt, async (req, res) => {
+router.put('/e/:id', checkJwt, async (req, res) => {
 
   // check authentication
   const token = req.headers.authorization
@@ -91,10 +172,10 @@ router.put('/api/e/:id', checkJwt, async (req, res) => {
       return res.status(500).send(err);
     }
 
-    // add something to check if person making update is the owner of the event
-
-    // post request
-    db.Event.findAll({where: 'id'=id}).update(req.body).then(async results =>{
+    // put request
+    db.Event.findAll({
+      where: 'id' = id
+    }).update(req.body).then(async results => {
       await res.json(results);
     })
 
@@ -103,7 +184,7 @@ router.put('/api/e/:id', checkJwt, async (req, res) => {
 });
 
 // delete request to delete an event
-router.put('/api/e/:id', checkJwt, async (req, res) => {
+router.delete('/e/:id', checkJwt, async (req, res) => {
 
   // check authentication
   const token = req.headers.authorization
@@ -123,29 +204,14 @@ router.put('/api/e/:id', checkJwt, async (req, res) => {
     // add something to check if person making delete request is the owner of the event
 
     // post request
-    db.Event.destroy({where: 'id'=id}).then(async results =>{
+    db.Event.destroy({
+      where: 'id' = id
+    }).then(async results => {
       await res.json(results);
     })
 
     res.status(200).send();
   });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-async function loadEvents() {
-  const client = await MongoClient.connect('mongodb://localhost:27017/');
-  return client.db('micro-blog').collection('micro-posts');
-}
 
 module.exports = router;
