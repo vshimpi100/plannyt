@@ -4,9 +4,6 @@
 
 <script>
 import moment from "moment";
-import $ from "jquery";
-import "fullcalendar";
-
 export default {
   name: "hello",
   data() {
@@ -27,10 +24,6 @@ export default {
         }
       ],
       config: {
-        defaultView: "month",
-        eventRender: function(event, element) {
-          console.log(event);
-        },
         themeSystem: "bootstrap4",
         bootstrapFontAwesome: {
           close: "fa-times",
@@ -57,11 +50,12 @@ export default {
         handleWindowResize: true,
         defaultView: "agendaDay",
         allDayText: "All Day Event",
-        defaultDate: date,
         navLinks: true, // can click day/week names to navigate views
         editable: true,
         eventLimit: true, // allow "more" link when too many events
-        events: function() {},
+        eventRender: function(event, element) {
+          console.log(event);
+        },
         dayClick: function(date) {
           alert("clicked " + date.format());
         },
