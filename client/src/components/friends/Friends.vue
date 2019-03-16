@@ -10,13 +10,9 @@
         <h5 class="card-header text-center">{{friend.name}}</h5>
         <img :src="friend.image" class="card-img-top">
         <div class="card-body text-center">
-          <button class="btn btn-large btn-primary">
-            <i class="fas fa-calendar"></i>
-            Availability
-          </button>
-          <button class="btn btn-large btn-primary">
-            <i class="fas fa-plus"></i>
-            Plan
+          <button class="btn btn-large btn-primary" @click="goToProfile(friend.username)">
+            <i class="fas fa-calendar-plus"></i>
+            Make a Plan
           </button>
         </div>
       </div>
@@ -33,26 +29,35 @@ export default {
       auth: true,
       friends: [
         {
-          name: "Mark",
+          name: "Mark Hamill",
+          username: 'markhamill',
           image: "https://via.placeholder.com/150"
         },
         {
-          name: "Mike",
+          name: "Mike Fonseca",
+          username: 'mikefonseca',
           image: "https://via.placeholder.com/150"
         },
         {
-          name: "Mitch",
+          name: "Mitch Mitchelson",
+          username: 'mitchm',
           image: "https://via.placeholder.com/150"
         },
         {
-          name: "Mitch",
+          name: "Brian Powers",
+          username: 'brianp',
           image: "https://via.placeholder.com/150"
-        },
+        }
       ]
     };
   },
   components: {
     appAddFriend: AddFriend
+  },
+  methods: {
+      goToProfile(username) {
+          this.$router.push({name: 'profile', params: {username: username}})
+      }
   }
 };
 </script>

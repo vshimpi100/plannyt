@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-light bg-light justify-content-center text-center">
+  <nav class="navbar navbar-light nav-pills bg-light justify-content-center text-center">
     <router-link tag="span" to="/" class="navbar-brand w-100"><a>Plannyt</a></router-link>
     <hr>
     <ul class="nav navbar-light bg-light container-fluid text-center justify-content-center">
