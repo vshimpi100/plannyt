@@ -2,6 +2,7 @@
 // base express app imports
 const express = require('express');
 
+
 // AUTHENTICATION IMPORTS
 // will be using auth0 for user authentication
 const auth0 = require('auth0');
