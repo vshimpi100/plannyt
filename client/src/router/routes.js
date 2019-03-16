@@ -1,7 +1,5 @@
 // importing main view component files
 import Home from '../components/home/Home.vue'
-import Plans from '../components/plans/Plans.vue'
-import New from '../components/plans/NewPlan.vue'
 import Friends from '../components/friends/Friends.vue'
 import Login from '../components/user/Login.vue'
 import Profile from '../components/user/Profile.vue'
@@ -13,16 +11,6 @@ export const routes = [
     path: '/',
     component: Home
   },
-  // User personal plans page
-  {
-    path: '/plans',
-    component: Plans
-  },
-  // New event form
-  {
-    path: '/new',
-    component: New
-  },
   // Friends you are following page
   {
     path: '/friends',
@@ -33,9 +21,9 @@ export const routes = [
     path: '/login',
     component: Login
   },
-  // Profile page
   {
-    path: '/profile',
+    path: '/profile/:username',
+    name: 'profile',
     component: Profile
   },
   // Catch-all path, will redirect to home page

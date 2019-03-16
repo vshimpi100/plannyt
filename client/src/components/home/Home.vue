@@ -64,7 +64,7 @@
           </div>
         </div>-->
         <app-calendar v-else></app-calendar>
-      </div>x
+      </div>
     </div>
     <Profile></Profile>
     <br>
