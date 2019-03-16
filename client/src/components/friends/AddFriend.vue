@@ -8,9 +8,12 @@
 
 <script>
 export default {
+    data () {
+        addActive: false;
+    },
     methods: {
         addFriend () {
-            alert('a modal should go here...');
+            add
         }
     }
 }

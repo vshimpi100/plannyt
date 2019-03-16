@@ -43,7 +43,7 @@ const checkJwt = jwt({
 //////////////////////////////////////
 
 // get request to get events for a given user
-router.get('/api/u/:username', async (req, res) => {
+router.get('/u/:username', async (req, res) => {
   db.User.findAll({
     where: {
       user: req.params.username
@@ -55,7 +55,7 @@ router.get('/api/u/:username', async (req, res) => {
 });
 
 // post request to create a new user
-router.post('api/u', async (req, res) => {
+router.post('/u', async (req, res) => {
   db.User.create(req.body).then(async results => {
     await res.json(results);
   })
@@ -63,7 +63,7 @@ router.post('api/u', async (req, res) => {
 })
 
 // put request to edit a user
-router.put('api/u/:username', async (req, res) => {
+router.put('/u/:username', async (req, res) => {
   db.User.findAll({
     where: {
       username = req.params.username
@@ -75,7 +75,7 @@ router.put('api/u/:username', async (req, res) => {
 })
 
 // put request to edit a user
-router.delete('api/u/username', async (req, res) => {
+router.delete('/u/username', async (req, res) => {
   db.User.findAll({
     where: {
       username: req.params.username
@@ -96,7 +96,7 @@ router.delete('api/u/username', async (req, res) => {
 //////////////////////////////////////
 
 // get request to get events for a user
-router.get('/api/e/:username', checkJwt, async (req, res) => {
+router.get('/e/:username', checkJwt, async (req, res) => {
 
   // check authentication
   const token = req.headers.authorization
@@ -127,7 +127,7 @@ router.get('/api/e/:username', checkJwt, async (req, res) => {
 });
 
 // post request to create a new event
-router.post('/api/e', checkJwt, async (req, res) => {
+router.post('/e', checkJwt, async (req, res) => {
 
   // check authentication
   const token = req.headers.authorization
@@ -154,7 +154,7 @@ router.post('/api/e', checkJwt, async (req, res) => {
 });
 
 // put request to update an event
-router.put('/api/e/:id', checkJwt, async (req, res) => {
+router.put('/e/:id', checkJwt, async (req, res) => {
 
   // check authentication
   const token = req.headers.authorization
@@ -171,9 +171,7 @@ router.put('/api/e/:id', checkJwt, async (req, res) => {
       return res.status(500).send(err);
     }
 
-    // add something to check if person making update is the owner of the event
-
-    // post request
+    // put request
     db.Event.findAll({
       where: 'id' = id
     }).update(req.body).then(async results => {
@@ -185,7 +183,7 @@ router.put('/api/e/:id', checkJwt, async (req, res) => {
 });
 
 // delete request to delete an event
-router.delete('/api/e/:id', checkJwt, async (req, res) => {
+router.delete('/e/:id', checkJwt, async (req, res) => {
 
   // check authentication
   const token = req.headers.authorization
