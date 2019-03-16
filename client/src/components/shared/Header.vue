@@ -15,7 +15,7 @@
           <i class="fas fa-users"></i> Friends
         </a>
       </router-link>
-      <li v-if="auth" @click="logout()" class="nav-item col">
+      <li v-if="isAuthenticated" @click="logout()" class="nav-item col">
         <a class="nav-link" href="#">
           <i class="fas fa-users"></i> Logout
         </a>
@@ -38,15 +38,22 @@ export default {
   },
   methods: {
     login() {
-      // authentication code goes here
-      this.auth = true;
+      this.$auth.login();
     },
     logout() {
-      if (confirm("Are you sure you want to log out?")) {
-        this.auth = false;
-        // logout code goes here
-      }
+      this.$auth.logOut();
+      this.$router.push({ path: "/" });
+    },
+    handleLoginEvent(data) {
+      this.isAuthenticated = data.loggedIn;
+      this.profile = data.profile;
     }
+  },
+  data() {
+    return {
+      isAuthenticated: false,
+      profile: {}
+    };
   }
 };
 </script>

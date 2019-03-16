@@ -7,8 +7,16 @@ import store from './store/store'
 import FullCalendar from 'vue-full-calendar'
 import 'fullcalendar/dist/fullcalendar.min.css'
 
+import AuthPlugin from './plugins/auth'
+// import HighlightJs from './directives/highlight'
+
 Vue.use(FullCalendar)
 Vue.use(VueRouter)
+Vue.use(AuthPlugin)
+
+// Vue.directive('highlightjs', HighlightJs)
+
+Vue.config.productionTip = false
 
 const router = new VueRouter({
   mode: 'history',
