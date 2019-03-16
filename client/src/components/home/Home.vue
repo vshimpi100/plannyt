@@ -1,22 +1,5 @@
 <template>
   <div>
-
-    <!-- <div class="row">
-      <div class="col-md-12">
-        <ul class="nav nav-pills nav-fill justify-content-center">
-          <li class="nav-item">
-            <a class="nav-link active" href="#">Friends</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Niches</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Nearby</a>
-          </li>
-        </ul>
-      </div>
-    </div>-->
-
     <br>
     <div class="container">
       <div class="row">
@@ -46,9 +29,6 @@ export default {
       user: "user",
       auth: true,
       friends: ["ralph"],
-
-      events: ["1"]
-
       events: ["1"],
       profile: this.$auth.profile
     };
@@ -75,23 +55,4 @@ export default {
 </script>
 
 <style>
-body {
-  font-size: 14px;
-  font-family: "Quicksand", "Open Sans", sans-serif;
-  line-height: 1.4;
-  color: #4d5055;
-  word-wrap: break-word;
-  word-break: break-word;
-  display: block;
-}
-
-div {
-  display: block;
-}
-
-*,
-::after,
-::before {
-  box-sizing: border-box;
-}
 </style>

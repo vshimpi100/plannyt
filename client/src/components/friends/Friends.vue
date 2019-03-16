@@ -30,22 +30,22 @@ export default {
       friends: [
         {
           name: "Mark Hamill",
-          username: "markhamill",
+          username: 'markhamill',
           image: "https://via.placeholder.com/150"
         },
         {
           name: "Mike Fonseca",
-          username: "mikefonseca",
+          username: 'mikefonseca',
           image: "https://via.placeholder.com/150"
         },
         {
           name: "Mitch Mitchelson",
-          username: "mitchm",
+          username: 'mitchm',
           image: "https://via.placeholder.com/150"
         },
         {
           name: "Brian Powers",
-          username: "brianp",
+          username: 'brianp',
           image: "https://via.placeholder.com/150"
         }
       ]
@@ -55,33 +55,14 @@ export default {
     appAddFriend: AddFriend
   },
   methods: {
-    goToProfile(username) {
-      this.$router.push({ name: "profile", params: { username: username } });
-    }
+      goToProfile(username) {
+          this.$router.push({name: 'profile', params: {username: username}})
+      }
   }
 };
 </script>
 
 <style>
-body {
-  font-size: 14px;
-  font-family: "Quicksand", "Open Sans", sans-serif;
-  line-height: 1.4;
-  color: #4d5055;
-  word-wrap: break-word;
-  word-break: break-word;
-  display: block;
-}
-
-div {
-  display: block;
-}
-
-*,
-::after,
-::before {
-  box-sizing: border-box;
-}
 .friend-card {
   margin-top: 10px;
 }
