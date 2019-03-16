@@ -32,6 +32,10 @@ module.exports = function (sequelize, DataTypes) {
     end: {
       type: Sequelize.STRING, //will save as a UNIX timestamp for start date and start time together
       allowNull: true
+    },
+    accepted: {
+      type: Sequelize.BOOLEAN,
+      defaultValue: false      
     }
   })
 

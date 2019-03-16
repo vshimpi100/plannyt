@@ -214,4 +214,38 @@ router.delete('/e/:id', checkJwt, async (req, res) => {
   });
 });
 
+
+router.put('/e/:id', checkJwt, async (req, res) => {
+
+  // check authentication
+  const token = req.headers.authorization
+    .replace('bearer ', '')
+    .replace('Bearer ', '');
+
+  const authClient = new auth0.AuthenticationClient({
+    domain: 'bk-tmp.auth0.com',
+    clientId: 'ZComiPhZoVB02xOsBF81LVbpsvkjL93S',
+  });
+
+  authClient.getProfile(token, async (err, userInfo) => {
+    if (err) {
+      return res.status(500).send(err);
+    }
+
+    // put request
+    db.Event.findAll({
+    
+    }).update({
+       accepted: true,
+    }, {
+       where: {  
+      id:req.body.id
+    }       
+    }).then(async results => {
+      await res.json(results);
+    })
+
+    res.status(200).send();
+  });
+});
 module.exports = router;

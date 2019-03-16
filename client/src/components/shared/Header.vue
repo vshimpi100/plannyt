@@ -15,6 +15,11 @@
           <i class="fas fa-users"></i> Friends
         </a>
       </router-link>
+      <router-link to="/invites" activeClass="active" tag="li" class="nav-item col">
+        <a class="nav-link">
+          <i class="fas fa-users"></i> Invites
+        </a>
+      </router-link>
       <li v-if="isAuthenticated" @click="logout()" class="nav-item col">
         <a class="nav-link" href="#">
           <i class="fas fa-users"></i> Logout
@@ -64,4 +69,6 @@ export default {
   color: blue;
   display: block;
 }
+
+
 </style>

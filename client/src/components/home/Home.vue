@@ -24,6 +24,9 @@
         <div v-else-if="!friends[0]" class="col-sm-12 text-center">
           <h3>Add a friend to see their events!</h3>
         </div>
+        <div v-else-if="!invites[0]" class="col-sm-12 text-center">
+          <h3>You currently have no invites.</h3>
+        </div>
         <div v-else-if="!events[0]" class="col-sm-12 text-center">
           <h3>Awkward, there aren't any events coming up!</h3>
         </div>
